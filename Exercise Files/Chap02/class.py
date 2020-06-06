@@ -2,15 +2,18 @@
 # Copyright 2009-2017 BHG http://bw.org/
 
 class Duck:
-    def quack(self):
+    def quack(self):  # Note that the first arguement for a method inside a class
+        # is always self
         print('Quaaack!')
 
     def walk(self):
         print('Walks like a duck.')
 
+
 def main():
     donald = Duck()
     donald.quack()
     donald.walk()
+
 
 if __name__ == '__main__': main()

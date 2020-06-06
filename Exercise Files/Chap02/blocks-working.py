@@ -4,6 +4,14 @@
 x = 42
 y = 73
 
-if x < y:
-    print('x < y: x is {} and y is {}'.format(x, y))
-    print(f'x is {x}')
+if x == 5:
+    print('do five stuff')
+elif x == 6:
+    print('do six stuff')
+elif x == 7:
+    print('do seven stuff')
+else:
+    print('do that other thing')
+
+#   Python does not have any switch or case statements
+#   since the same result can be found by using a series of elif statements
