@@ -3,7 +3,7 @@
 
 class RevStr(str):
     def __str__(self):
-        return self[::-1]
+        return self[::-1]  # this is taking a slice of a string and stepping backwards
 
 def main():
     hello = RevStr('Hello, World.')

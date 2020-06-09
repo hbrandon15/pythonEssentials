@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Copyright 2009-2017 BHG http://bw.org/
 
+
 class Animal:
     def __init__(self, **kwargs):
         if 'type' in kwargs: self._type = kwargs['type']
@@ -22,22 +23,27 @@ class Animal:
         try: return self._sound
         except AttributeError: return None
 
+
 class Duck(Animal):
     def __init__(self, **kwargs):
         self._type = 'duck'
         if 'type' in kwargs: del kwargs['type']
-        super().__init__(**kwargs)
+        super().__init__(**kwargs)  # super always calls the parent class
+
 
 class Kitten(Animal):
     def __init__(self, **kwargs):
         self._type = 'kitten'
-        if 'type' in kwargs: del kwargs['type']
+        if 'type' in kwargs:
+            del kwargs['type']
         super().__init__(**kwargs)
+
 
 def print_animal(o):
     if not isinstance(o, Animal):
         raise TypeError('print_animal(): requires an Animal')
     print(f'The {o.type()} is named "{o.name()}" and says "{o.sound()}".')
+
 
 def main():
     a0 = Kitten(name = 'fluffy', sound = 'rwar')
@@ -45,4 +51,6 @@ def main():
     print_animal(a0)
     print_animal(a1)
 
-if __name__ == '__main__': main()
+
+if __name__ == '__main__':
+    main()

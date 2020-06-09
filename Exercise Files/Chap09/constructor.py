@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # Copyright 2009-2017 BHG http://bw.org/
 
+
 class Animal:
-    def __init__(self, type, name, sound):
+    def __init__(self, type, name, sound):  # this is the declaration of a constructor
         self._type = type
         self._name = name
         self._sound = sound
 
-    def type(self):
+    def type(self):  # these are called "getters" because they are essentially getting the variable returned
         return self._type
 
     def name(self):
@@ -15,6 +16,7 @@ class Animal:
 
     def sound(self):
         return self._sound
+
 
 def print_animal(o):
     if not isinstance(o, Animal):
